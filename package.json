@@ -1,6 +1,6 @@
 {
   "name": "kit",
-  "version": "2.0.7",
+  "version": "2.0.8",
   "author": {
     "name": "teniryte",
     "email": "teniryte@gmail.com"
@@ -18,24 +18,24 @@
   },
   "exports": {
     ".": {
+      "types": "./dist/esm/index.d.ts",
       "import": "./dist/esm/index.js",
-      "require": "./dist/cjs/index.js",
-      "types": "./dist/esm/index.d.ts"
+      "require": "./dist/cjs/index.js"
     },
     "./flatten": {
+      "types": "./dist/esm/runtime/flatten.d.ts",
       "import": "./dist/esm/runtime/flatten.js",
-      "require": "./dist/cjs/runtime/flatten.js",
-      "types": "./dist/esm/runtime/flatten.d.ts"
+      "require": "./dist/cjs/runtime/flatten.js"
     },
     "./primitive": {
+      "types": "./dist/esm/types/primitive.d.ts",
       "import": "./dist/esm/types/primitive.js",
-      "require": "./dist/cjs/types/primitive.js",
-      "types": "./dist/esm/types/primitive.d.ts"
+      "require": "./dist/cjs/types/primitive.js"
     },
     "./pluralize": {
+      "types": "./dist/esm/runtime/pluralize.d.ts",
       "import": "./dist/esm/runtime/pluralize.js",
-      "require": "./dist/cjs/runtime/pluralize.js",
-      "types": "./dist/esm/runtime/pluralize.d.ts"
+      "require": "./dist/cjs/runtime/pluralize.js"
     }
   },
   "files": [
