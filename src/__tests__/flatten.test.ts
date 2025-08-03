@@ -23,5 +23,19 @@ describe('flatten', () => {
       'c.e.0': 5,
       'c.e.1': 6,
     });
+    expect(
+      flatten(
+        {
+          a: 1,
+          b: {
+            c: {
+              d: 2,
+            },
+            d: [3, 4],
+          },
+        },
+        true
+      )
+    ).toEqual({ a: 1, 'b.c.d': 2, 'b.d.0': 3, 'b.d.1': 4 });
   });
 });
