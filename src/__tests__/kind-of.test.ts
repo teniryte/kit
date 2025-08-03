@@ -39,6 +39,8 @@ describe('kind-of', () => {
     expect(kindOf(new Int8Array())).toBe(Kind.Int8Array);
     expect(kindOf(new Promise(() => {}))).toBe(Kind.Promise);
 
+    expect(kindOf(parseInt('sgd'))).toBe(Kind.NaN);
+
     (function () {
       expect(kindOf(arguments)).toBe(Kind.ArrayLike);
     })();

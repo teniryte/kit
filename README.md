@@ -30,7 +30,7 @@ import flatten from 'kit/flatten';
 > Returns the specific type/kind of a value with enhanced type detection beyond `typeof`.
 
 ```ts
-import { kindOf } from 'kit';
+import { kindOf, Kind } from 'kit';
 
 kindOf(null); // => Kind.Null
 kindOf(undefined); // => Kind.Undefined
@@ -108,7 +108,25 @@ const flatObject = flatten({
 }); // => { a: 1, 'b.c.d': 2, 'b.d.0': 3, 'b.d.1': 4}
 ```
 
-## Utility Types
+### argsNames
+
+> Extracts parameter names from a function as an array of strings.
+
+```ts
+import { argsNames } from 'kit';
+
+// Extract parameter names from arrow functions
+argsNames(() => {}); // => []
+argsNames((a: number) => a); // => ['a']
+
+// Extract parameter names from regular functions
+argsNames(function (a: number, b: number) {
+  return a + b;
+}); // => ['a', 'b']
+
+```
+
+## Types & Enums
 
 ### Kind
 

@@ -7,3 +7,5 @@ export * from './runtime/pluralize';
 export * from './types/kind.enum';
 
 export * from './runtime/kind-of';
+
+export * from './runtime/args-names';

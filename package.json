@@ -1,6 +1,6 @@
 {
   "name": "kit",
-  "version": "2.0.11",
+  "version": "2.0.12",
   "description": "A lightweight TypeScript utility library with Russian pluralization, object/array flattening, and utility types",
   "author": {
     "name": "teniryte",
@@ -48,6 +48,11 @@
       "types": "./dist/esm/runtime/kind-of.d.ts",
       "import": "./dist/esm/runtime/kind-of.js",
       "require": "./dist/cjs/runtime/kind-of.js"
+    },
+    "./args-names": {
+      "types": "./dist/esm/runtime/args-names.d.ts",
+      "import": "./dist/esm/runtime/args-names.js",
+      "require": "./dist/cjs/runtime/args-names.js"
     }
   },
   "files": [
@@ -82,6 +87,9 @@
       ],
       "kind-of": [
         "dist/esm/runtime/kind-of.d.ts"
+      ],
+      "args-names": [
+        "dist/esm/runtime/args-names.d.ts"
       ]
     }
   }
