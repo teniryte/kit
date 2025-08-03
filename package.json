@@ -1,6 +1,6 @@
 {
   "name": "kit",
-  "version": "2.0.6",
+  "version": "2.0.7",
   "author": {
     "name": "teniryte",
     "email": "teniryte@gmail.com"
@@ -21,6 +21,16 @@
       "import": "./dist/esm/index.js",
       "require": "./dist/cjs/index.js",
       "types": "./dist/esm/index.d.ts"
+    },
+    "./flatten": {
+      "import": "./dist/esm/runtime/flatten.js",
+      "require": "./dist/cjs/runtime/flatten.js",
+      "types": "./dist/esm/runtime/flatten.d.ts"
+    },
+    "./primitive": {
+      "import": "./dist/esm/types/primitive.js",
+      "require": "./dist/cjs/types/primitive.js",
+      "types": "./dist/esm/types/primitive.d.ts"
     }
   },
   "files": [
@@ -40,6 +50,12 @@
     "*": {
       ".": [
         "dist/esm/index.d.ts"
+      ],
+      "flatten": [
+        "dist/esm/runtime/flatten.d.ts"
+      ],
+      "primitive": [
+        "dist/esm/types/primitive.d.ts"
       ]
     }
   }
