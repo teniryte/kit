@@ -1,20 +1,20 @@
-import { Primitive } from '../types/primitive';
+import { Primitive } from '../types/primitive.type';
 
 export function flatten(input: unknown, unpackArrays = false): unknown {
   if (Array.isArray(input)) {
-    // рекурсивное уплощение массива
+    // recursively flatten array
     return input.reduce<unknown[]>((acc, val) => {
       if (Array.isArray(val)) {
         acc.push(...(flatten(val, unpackArrays) as unknown[]));
       } else if (typeof val === 'object' && val !== null) {
-        acc.push(flatten(val, unpackArrays)); // вложенные объекты остаются объектами
+        acc.push(flatten(val, unpackArrays)); // nested objects remain objects
       } else {
         acc.push(val);
       }
       return acc;
     }, []);
   } else if (typeof input === 'object' && input !== null) {
-    // объект → плоский объект
+    // object → flat object
     const result: Record<string, Primitive> = {};
 
     const recurse = (obj: Record<string, unknown>, parentKey = '') => {
@@ -22,13 +22,13 @@ export function flatten(input: unknown, unpackArrays = false): unknown {
         const newKey = parentKey ? `${parentKey}.${key}` : key;
         if (Array.isArray(val)) {
           if (unpackArrays) {
-            // распаковываем массив в отдельные свойства
+            // unpack array into separate properties
             const flattenedArray = flatten(val, unpackArrays) as unknown[];
             flattenedArray.forEach((item, index) => {
               result[`${newKey}.${index}`] = item as Primitive;
             });
           } else {
-            // сохраняем массив как есть
+            // keep array as is
             result[newKey] = flatten(val, unpackArrays) as unknown as Primitive;
           }
         } else if (typeof val === 'object' && val !== null) {
@@ -43,7 +43,7 @@ export function flatten(input: unknown, unpackArrays = false): unknown {
     return result;
   }
 
-  // если примитив
+  // if primitive
   return input;
 }
 

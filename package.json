@@ -1,6 +1,6 @@
 {
   "name": "kit",
-  "version": "2.0.9",
+  "version": "2.0.10",
   "description": "A lightweight TypeScript utility library with Russian pluralization, object/array flattening, and utility types",
   "author": {
     "name": "teniryte",
@@ -13,6 +13,7 @@
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "devDependencies": {
+    "@types/node": "^24.1.0",
     "typescript": "^5.9.2",
     "vite": "^7.0.6",
     "vitest": "^3.2.4"
@@ -29,14 +30,24 @@
       "require": "./dist/cjs/runtime/flatten.js"
     },
     "./primitive": {
-      "types": "./dist/esm/types/primitive.d.ts",
-      "import": "./dist/esm/types/primitive.js",
-      "require": "./dist/cjs/types/primitive.js"
+      "types": "./dist/esm/types/primitive.type.d.ts",
+      "import": "./dist/esm/types/primitive.type.js",
+      "require": "./dist/cjs/types/primitive.type.js"
     },
     "./pluralize": {
       "types": "./dist/esm/runtime/pluralize.d.ts",
       "import": "./dist/esm/runtime/pluralize.js",
       "require": "./dist/cjs/runtime/pluralize.js"
+    },
+    "./kind": {
+      "types": "./dist/esm/types/kind.enum.d.ts",
+      "import": "./dist/esm/types/kind.enum.js",
+      "require": "./dist/cjs/types/kind.enum.js"
+    },
+    "./kind-of": {
+      "types": "./dist/esm/runtime/kind-of.d.ts",
+      "import": "./dist/esm/runtime/kind-of.js",
+      "require": "./dist/cjs/runtime/kind-of.js"
     }
   },
   "files": [
@@ -61,10 +72,16 @@
         "dist/esm/runtime/flatten.d.ts"
       ],
       "primitive": [
-        "dist/esm/types/primitive.d.ts"
+        "dist/esm/types/primitive.type.d.ts"
       ],
       "pluralize": [
         "dist/esm/runtime/pluralize.d.ts"
+      ],
+      "kind": [
+        "dist/esm/types/kind.enum.d.ts"
+      ],
+      "kind-of": [
+        "dist/esm/runtime/kind-of.d.ts"
       ]
     }
   }

@@ -25,6 +25,30 @@ import flatten from 'kit/flatten';
 
 ## Utilities
 
+### kindOf
+
+> Returns the specific type/kind of a value with enhanced type detection beyond `typeof`.
+
+```ts
+import { kindOf } from 'kit';
+
+kindOf(null); // => 'null'
+kindOf(undefined); // => 'undefined'
+kindOf(NaN); // => 'nan'
+kindOf('string'); // => 'string'
+kindOf(123); // => 'number'
+kindOf(true); // => 'boolean'
+kindOf(Symbol()); // => 'symbol'
+kindOf([]); // => 'array'
+kindOf(new Set()); // => 'set'
+kindOf(new Map()); // => 'map'
+kindOf(new Date()); // => 'date'
+kindOf(/regex/); // => 'regexp'
+kindOf(Buffer.from('test')); // => 'buffer'
+kindOf(class Test {}); // => 'class'
+kindOf(() => {}); // => 'function'
+```
+
 ### pluralize
 
 > Russian pluralization utility that returns the correct word form based on count.
@@ -77,6 +101,32 @@ const flatObject = flatten({
 ```
 
 ## Utility Types
+
+### Kind
+
+> Enum containing possible kind of value variants:
+
+```ts
+enum Kind {
+  Null = 'null',
+  String = 'string',
+  Undefined = 'undefined',
+  Array = 'array',
+  ArrayLike = 'array-like',
+  Class = 'class',
+  Function = 'function',
+  Symbol = 'symbol',
+  Number = 'number',
+  Date = 'date',
+  Boolean = 'boolean',
+  Regex = 'regexp',
+  Buffer = 'buffer',
+  NaN = 'nan',
+  Set = 'set',
+  Map = 'map',
+  ArrayBuffer = 'arraybuffer'
+}
+```
 
 ### Primitive
 
