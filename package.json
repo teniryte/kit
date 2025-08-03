@@ -31,6 +31,11 @@
       "import": "./dist/esm/types/primitive.js",
       "require": "./dist/cjs/types/primitive.js",
       "types": "./dist/esm/types/primitive.d.ts"
+    },
+    "./pluralize": {
+      "import": "./dist/esm/runtime/pluralize.js",
+      "require": "./dist/cjs/runtime/pluralize.js",
+      "types": "./dist/esm/runtime/pluralize.d.ts"
     }
   },
   "files": [
@@ -56,6 +61,9 @@
       ],
       "primitive": [
         "dist/esm/types/primitive.d.ts"
+      ],
+      "pluralize": [
+        "dist/esm/runtime/pluralize.d.ts"
       ]
     }
   }

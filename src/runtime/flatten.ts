@@ -1,4 +1,4 @@
-import { Primitive } from '../index';
+import { Primitive } from '../types/primitive';
 
 export function flatten(input: unknown, unpackArrays = false): unknown {
   if (Array.isArray(input)) {
