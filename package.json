@@ -1,6 +1,7 @@
 {
   "name": "kit",
   "version": "2.0.9",
+  "description": "A lightweight TypeScript utility library with Russian pluralization, object/array flattening, and utility types",
   "author": {
     "name": "teniryte",
     "email": "teniryte@gmail.com"

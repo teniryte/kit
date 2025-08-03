@@ -2,18 +2,24 @@
 
 # Kit
 
-Universal TypeScript utilities for development.
+A lightweight TypeScript library providing some specific utilities and types.
 
 ## Installation
 
 ```bash
 npm install kit
+# or
+yarn add kit
+# or
+bun add kit
 ```
 
 ## Usage
 
 ```typescript
-import { /* utilities */ } from 'kit';
+import { flatten } from 'kit';
+// or
+import flatten from 'kit/flatten';
 
 ```
 
