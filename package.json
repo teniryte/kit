@@ -53,6 +53,11 @@
       "types": "./dist/esm/runtime/args-names.d.ts",
       "import": "./dist/esm/runtime/args-names.js",
       "require": "./dist/cjs/runtime/args-names.js"
+    },
+    "./event-emitter": {
+      "types": "./dist/esm/runtime/event-emitter.d.ts",
+      "import": "./dist/esm/runtime/event-emitter.js",
+      "require": "./dist/cjs/runtime/event-emitter.js"
     }
   },
   "files": [
@@ -90,6 +95,9 @@
       ],
       "args-names": [
         "dist/esm/runtime/args-names.d.ts"
+      ],
+      "event-emitter": [
+        "dist/esm/runtime/event-emitter.d.ts"
       ]
     }
   }

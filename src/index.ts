@@ -9,3 +9,5 @@ export * from './types/kind.enum';
 export * from './runtime/kind-of';
 
 export * from './runtime/args-names';
+
+export * from './runtime/event-emitter';

@@ -126,6 +126,35 @@ argsNames(function (a: number, b: number) {
 
 ```
 
+### EventEmitter
+
+> A simple event emitter implementation for handling custom events.
+
+```ts
+import { EventEmitter } from 'kit';
+
+const emitter = new EventEmitter();
+
+// Subscribe to events
+emitter.on('user:login', (user: User) => {
+  console.log('User logged in:', user);
+});
+
+// Emit events
+emitter.emit('user:login', { id: 1, name: 'John' });
+
+// Emit once
+emitter.once('user:login', { id: 1, name: 'John' });
+
+// Remove listener
+emitter.off('user:login', handler);
+
+// Remove all listeners of event
+emitter.removeAllListeners('user:login');
+// or to empty event emitter
+emitter.removeAllListeners();
+```
+
 ## Types & Enums
 
 ### Kind
