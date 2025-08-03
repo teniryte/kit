@@ -32,21 +32,29 @@ import flatten from 'kit/flatten';
 ```ts
 import { kindOf } from 'kit';
 
-kindOf(null); // => 'null'
-kindOf(undefined); // => 'undefined'
-kindOf(NaN); // => 'nan'
-kindOf('string'); // => 'string'
-kindOf(123); // => 'number'
-kindOf(true); // => 'boolean'
-kindOf(Symbol()); // => 'symbol'
-kindOf([]); // => 'array'
-kindOf(new Set()); // => 'set'
-kindOf(new Map()); // => 'map'
-kindOf(new Date()); // => 'date'
-kindOf(/regex/); // => 'regexp'
-kindOf(Buffer.from('test')); // => 'buffer'
-kindOf(class Test {}); // => 'class'
-kindOf(() => {}); // => 'function'
+kindOf(null); // => Kind.Null
+kindOf(undefined); // => Kind.Undefined
+kindOf(NaN); // => Kind.Nan
+
+kindOf('string'); // => Kind.String
+kindOf(123); // => Kind.Number
+kindOf(true); // => Kind.Boolean
+kindOf(Symbol()); // => Kind.Symbol
+kindOf([]); // => Kind.Array
+kindOf(arguments); // => Kind.ArrayLike
+
+kindOf(() => {}); // => Kind.Function
+
+kindOf(new Set()); // => Kind.Set
+kindOf(new Map()); // => Kind.Map
+kindOf(new Date()); // => Kind.Date
+kindOf(/regex/); // => Kind.RegExp
+kindOf(Buffer.from('test')); // => Kind.Buffer
+
+kindOf(class Test {}); // => Kind.Class
+kindOf(Set); // => Kind.Class
+kindOf(Map); // => Kind.Class
+kindOf(Date); // => Kind.Class
 ```
 
 ### pluralize
@@ -112,19 +120,26 @@ enum Kind {
   String = 'string',
   Undefined = 'undefined',
   Array = 'array',
-  ArrayLike = 'array-like',
+  ArrayLike = 'arraylike',
   Class = 'class',
   Function = 'function',
   Symbol = 'symbol',
   Number = 'number',
   Date = 'date',
   Boolean = 'boolean',
-  Regex = 'regexp',
+  RegExp = 'regexp',
   Buffer = 'buffer',
   NaN = 'nan',
   Set = 'set',
   Map = 'map',
-  ArrayBuffer = 'arraybuffer'
+  ArrayBuffer = 'arraybuffer',
+  Error = 'error',
+  Promise = 'promise',
+  WeakMap = 'weakmap',
+  WeakSet = 'weakset',
+  Int8Array = 'int8array',
+  Uint8Array = 'uint8array',
+  Uint8ClampedArray = 'uint8clampedarray',
 }
 ```
 

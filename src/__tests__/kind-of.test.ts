@@ -14,7 +14,7 @@ describe('kind-of', () => {
     expect(kindOf(true)).toBe(Kind.Boolean);
     expect(kindOf(false)).toBe('boolean');
     expect(kindOf(new Date())).toBe(Kind.Date);
-    expect(kindOf(new RegExp(''))).toBe(Kind.Regex);
+    expect(kindOf(new RegExp(''))).toBe(Kind.RegExp);
     expect(kindOf(Person)).toBe(Kind.Class);
     expect(kindOf(createPerson)).toBe(Kind.Function);
     expect(kindOf(() => {})).toBe(Kind.Function);
@@ -27,6 +27,17 @@ describe('kind-of', () => {
     expect(kindOf(new Map())).toBe(Kind.Map);
     expect(kindOf(new Array())).toBe(Kind.Array);
     expect(kindOf(new ArrayBuffer(1))).toBe(Kind.ArrayBuffer);
+
+    expect(kindOf(new Error())).toBe(Kind.Error);
+    expect(kindOf(new Promise(() => {}))).toBe(Kind.Promise);
+    expect(kindOf(new WeakMap())).toBe(Kind.WeakMap);
+    expect(kindOf(new WeakSet())).toBe(Kind.WeakSet);
+    expect(kindOf(new Int8Array())).toBe(Kind.Int8Array);
+    expect(kindOf(new Uint8Array())).toBe(Kind.Uint8Array);
+    expect(kindOf(new Uint8ClampedArray())).toBe(Kind.Uint8ClampedArray);
+
+    expect(kindOf(new Int8Array())).toBe(Kind.Int8Array);
+    expect(kindOf(new Promise(() => {}))).toBe(Kind.Promise);
 
     (function () {
       expect(kindOf(arguments)).toBe(Kind.ArrayLike);

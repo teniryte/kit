@@ -10,12 +10,19 @@ export enum Kind {
   Number = 'number',
   Date = 'date',
   Boolean = 'boolean',
-  Regex = 'regex',
+  RegExp = 'regexp',
   Buffer = 'buffer',
   NaN = 'nan',
   Set = 'set',
   Map = 'map',
   ArrayBuffer = 'arraybuffer',
+  Error = 'error',
+  Promise = 'promise',
+  WeakMap = 'weakmap',
+  WeakSet = 'weakset',
+  Int8Array = 'int8array',
+  Uint8Array = 'uint8array',
+  Uint8ClampedArray = 'uint8clampedarray',
 }
 
 export default Kind;

@@ -17,6 +17,14 @@ export function kindOf(value: unknown): Kind {
     return Kind.NaN;
   }
 
+  if (value instanceof Error) return Kind.Error;
+  if (value instanceof Promise) return Kind.Promise;
+  if (value instanceof WeakMap) return Kind.WeakMap;
+  if (value instanceof WeakSet) return Kind.WeakSet;
+  if (value instanceof Int8Array) return Kind.Int8Array;
+  if (value instanceof Uint8Array) return Kind.Uint8Array;
+  if (value instanceof Uint8ClampedArray) return Kind.Uint8ClampedArray;
+
   if (typeof value === 'function') {
     // Check for built-in classes first
     if (
@@ -72,7 +80,7 @@ export function kindOf(value: unknown): Kind {
   if (typeof value === 'boolean') return Kind.Boolean;
 
   if (value instanceof Date) return Kind.Date;
-  if (value instanceof RegExp) return Kind.Regex;
+  if (value instanceof RegExp) return Kind.RegExp;
 
   return (typeof value as Kind) || Kind.Undefined;
 }
