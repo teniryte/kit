@@ -1,6 +1,6 @@
 {
   "name": "kit",
-  "version": "2.0.24",
+  "version": "2.0.25",
   "description": "A lightweight TypeScript utility library with Russian pluralization, object/array flattening, and utility types",
   "author": {
     "name": "teniryte",
@@ -10,8 +10,8 @@
     "type": "git",
     "url": "https://github.com/teniryte/kit"
   },
-  "main": "./dist/cjs/index.js",
-  "module": "./dist/esm/index.js",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
   "devDependencies": {
     "@types/node": "^24.1.0",
     "tsup": "^8.5.0",
@@ -21,49 +21,49 @@
   },
   "exports": {
     ".": {
-      "types": "./dist/esm/index.d.ts",
-      "import": "./dist/esm/index.js",
-      "require": "./dist/cjs/index.js"
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
     },
     "./flatten": {
-      "types": "./dist/esm/runtime/flatten.d.ts",
-      "import": "./dist/esm/runtime/flatten.js",
-      "require": "./dist/cjs/runtime/flatten.js"
+      "types": "./dist/flatten.d.ts",
+      "import": "./dist/flatten.js",
+      "require": "./dist/flatten.cjs"
     },
     "./primitive": {
-      "types": "./dist/esm/types/primitive.type.d.ts",
-      "import": "./dist/esm/types/primitive.type.js",
-      "require": "./dist/cjs/types/primitive.type.js"
+      "types": "./dist/primitive.d.ts",
+      "import": "./dist/primitive.js",
+      "require": "./dist/primitive.cjs"
     },
     "./pluralize": {
-      "types": "./dist/esm/runtime/pluralize.d.ts",
-      "import": "./dist/esm/runtime/pluralize.js",
-      "require": "./dist/cjs/runtime/pluralize.js"
+      "types": "./dist/pluralize.d.ts",
+      "import": "./dist/pluralize.js",
+      "require": "./dist/pluralize.cjs"
     },
     "./kind": {
-      "types": "./dist/esm/types/kind.enum.d.ts",
-      "import": "./dist/esm/types/kind.enum.js",
-      "require": "./dist/cjs/types/kind.enum.js"
+      "types": "./dist/kind.d.ts",
+      "import": "./dist/kind.js",
+      "require": "./dist/kind.cjs"
     },
     "./kind-of": {
-      "types": "./dist/esm/runtime/kind-of.d.ts",
-      "import": "./dist/esm/runtime/kind-of.js",
-      "require": "./dist/cjs/runtime/kind-of.js"
+      "types": "./dist/kind-of.d.ts",
+      "import": "./dist/kind-of.js",
+      "require": "./dist/kind-of.cjs"
     },
     "./args-names": {
-      "types": "./dist/esm/runtime/args-names.d.ts",
-      "import": "./dist/esm/runtime/args-names.js",
-      "require": "./dist/cjs/runtime/args-names.js"
+      "types": "./dist/args-names.d.ts",
+      "import": "./dist/args-names.js",
+      "require": "./dist/args-names.cjs"
     },
     "./event-emitter": {
-      "types": "./dist/esm/runtime/event-emitter.d.ts",
-      "import": "./dist/esm/runtime/event-emitter.js",
-      "require": "./dist/cjs/runtime/event-emitter.js"
+      "types": "./dist/event-emitter.d.ts",
+      "import": "./dist/event-emitter.js",
+      "require": "./dist/event-emitter.cjs"
     },
     "./debug-string": {
-      "types": "./dist/esm/runtime/debug-string.d.ts",
-      "import": "./dist/esm/runtime/debug-string.js",
-      "require": "./dist/cjs/runtime/debug-string.js"
+      "types": "./dist/debug-string.d.ts",
+      "import": "./dist/debug-string.js",
+      "require": "./dist/debug-string.cjs"
     }
   },
   "files": [
@@ -78,35 +78,35 @@
     "coverage": "vitest run --coverage"
   },
   "type": "module",
-  "types": "./dist/esm/index.d.ts",
+  "types": "./dist/index.d.ts",
   "typesVersions": {
     "*": {
       ".": [
-        "dist/esm/index.d.ts"
+        "dist/index.d.ts"
       ],
       "flatten": [
-        "dist/esm/runtime/flatten.d.ts"
+        "dist/flatten.d.ts"
       ],
       "primitive": [
-        "dist/esm/types/primitive.type.d.ts"
+        "dist/primitive.d.ts"
       ],
       "pluralize": [
-        "dist/esm/runtime/pluralize.d.ts"
+        "dist/pluralize.d.ts"
       ],
       "kind": [
-        "dist/esm/types/kind.enum.d.ts"
+        "dist/kind.d.ts"
       ],
       "kind-of": [
-        "dist/esm/runtime/kind-of.d.ts"
+        "dist/kind-of.d.ts"
       ],
       "args-names": [
-        "dist/esm/runtime/args-names.d.ts"
+        "dist/args-names.d.ts"
       ],
       "event-emitter": [
-        "dist/esm/runtime/event-emitter.d.ts"
+        "dist/event-emitter.d.ts"
       ],
       "debug-string": [
-        "dist/esm/runtime/debug-string.d.ts"
+        "dist/debug-string.d.ts"
       ]
     }
   }
