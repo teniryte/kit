@@ -42,7 +42,7 @@ export const debugString = (val: any): string => {
     return `<${attrs}>${html}</${val.tagName.toLowerCase()}>`;
   }
 
-  if (typeof HTMLCollection === 'function' && val instanceof HTMLCollection) {
+  if (typeof NodeList === 'function' && val instanceof NodeList) {
     return debugString([...val]);
   }
 
