@@ -126,7 +126,7 @@ debugString(NaN); // => 'NaN'
 // Functions
 debugString(() => {}); // => '[function ()]'
 debugString((a: number) => a); // => '[function (a)]'
-debugString(function test(a: number) => a); // => '[function test(a)]'
+debugString(function test(a: number) {}); // => '[function test(a)]'
 
 // Arrays
 debugString([1, 2, 3]); // => '[1, 2, 3]'
