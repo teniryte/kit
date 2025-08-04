@@ -126,6 +126,7 @@ debugString(NaN); // => 'NaN'
 // Functions
 debugString(() => {}); // => '<function ()>'
 debugString((a: number) => a); // => '<function (a)>'
+debugString(function test(a: number) => a); // => '<function test(a)>'
 
 // Arrays
 debugString([1, 2, 3]); // => '[1, 2, 3]'
@@ -138,6 +139,9 @@ debugString(Date); // => '[class Date]'
 
 // Symbols
 debugString(Symbol('test')); // => 'Symbol(test)'
+
+// HTMl Elements
+debugString(document.body); // => <body ...>...</body>
 ```
 
 ### argsNames
