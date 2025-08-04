@@ -110,7 +110,7 @@ const flatObject = flatten({
 
 ### debugString
 
-> Converts any value into a readable string representation for debugging purposes.
+> Converts any value into a readable string representation for debugging purposes. Guarantees to return a string representation of any value, first attempting to serialize it using JSON, and in case of failure, obtaining the most human-readable string description. 
 
 ```ts
 import { debugString } from 'kit';
@@ -132,16 +132,21 @@ debugString(function test(a: number) => a); // => '<function test(a)>'
 debugString([1, 2, 3]); // => '[1, 2, 3]'
 
 // Objects
-debugString({ a: 1, b: 2 }); // => '{\n  "a": 1,\n  "b": 2\n}'
+debugString({ a: 1, b: 2, doc: document }); /** => {
+  "a": 1,
+  "b": 2,
+  "doc": [object HTMLDocument]
+} */
 
 // Classes
+debugString(class Person {}); // => '[class Person]'
 debugString(Date); // => '[class Date]'
 
 // Symbols
 debugString(Symbol('test')); // => 'Symbol(test)'
 
 // HTMl Elements
-debugString(document.body); // => <body ...>...</body>
+debugString(document.body); // => '<body class="dark-theme"><h1>...</body>'
 ```
 
 ### argsNames
