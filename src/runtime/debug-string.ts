@@ -34,7 +34,7 @@ export const debugString = (val: any): string => {
     }`;
     let html = val.innerHTML?.trim();
     if (!html) {
-      return `<${attrs}></${attrs}>`;
+      return val.outerHTML;
     }
     if (html.length > 30) {
       html = `${html.slice(0, 30)}...`;
