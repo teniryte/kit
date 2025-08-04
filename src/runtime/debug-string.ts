@@ -46,6 +46,10 @@ export const debugString = (val: any): string => {
     return debugString([...val]);
   }
 
+  if (typeof HTMLCollection === 'function' && val instanceof HTMLCollection) {
+    return debugString([...val]);
+  }
+
   try {
     const s = JSON.stringify(val, null, 2);
     if (s === '{}') {
