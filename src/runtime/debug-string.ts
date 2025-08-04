@@ -43,9 +43,6 @@ export const debugString = (val: any): string => {
   }
 
   try {
-    if (val?.length) {
-      return `[${[...val].map((v) => debugString(v)).join(', ')}]`;
-    }
     const s = JSON.stringify(val, null, 2);
     if (s === '{}') {
       return val.toString();
