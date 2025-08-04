@@ -4,7 +4,7 @@ import kindOf from './kind-of';
 
 export const debugString = (val: any): string => {
   if (kindOf(val) === Kind.Error) {
-    return val.toString() + '\n' + val.stack;
+    return val.stack;
   }
 
   if (kindOf(val) === Kind.Undefined) return 'undefined';
