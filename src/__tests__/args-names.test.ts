@@ -1,4 +1,5 @@
 import { argsNames } from '../runtime/args-names';
+import { describe, it, expect } from 'vitest';
 
 describe('args-names', () => {
   it('should return the correct arguments names', () => {

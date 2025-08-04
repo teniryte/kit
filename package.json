@@ -1,7 +1,6 @@
 {
   "name": "kit",
-  "version": "2.0.25",
-  "description": "A lightweight TypeScript utility library with Russian pluralization, object/array flattening, and utility types",
+  "version": "2.0.26",
   "author": {
     "name": "teniryte",
     "email": "teniryte@gmail.com"
@@ -64,8 +63,14 @@
       "types": "./dist/debug-string.d.ts",
       "import": "./dist/debug-string.js",
       "require": "./dist/debug-string.cjs"
+    },
+    "./is-class": {
+      "types": "./dist/is-class.d.ts",
+      "import": "./dist/is-class.js",
+      "require": "./dist/is-class.cjs"
     }
   },
+  "description": "A lightweight TypeScript utility library with Russian pluralization, object/array flattening, and utility types",
   "files": [
     "dist"
   ],
@@ -107,6 +112,9 @@
       ],
       "debug-string": [
         "dist/debug-string.d.ts"
+      ],
+      "is-class": [
+        "dist/is-class.d.ts"
       ]
     }
   }

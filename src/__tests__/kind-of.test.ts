@@ -1,5 +1,6 @@
 import { Kind } from '../types/kind.enum';
 import kindOf from '../runtime/kind-of';
+import { describe, it, expect } from 'vitest';
 
 class Person {}
 

@@ -1,4 +1,5 @@
 import pluralize from '../runtime/pluralize';
+import { describe, it, expect } from 'vitest';
 
 describe('pluralize', () => {
   it('pluralize', () => {

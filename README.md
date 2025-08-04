@@ -196,6 +196,32 @@ emitter.removeAllListeners('user:login');
 emitter.removeAllListeners();
 ```
 
+### isClass
+
+> Checks if a value is a class constructor function.
+
+```ts
+import { isClass } from 'kit';
+
+// Class constructors
+isClass(class Person {}); // => true
+isClass(Date); // => true
+isClass(Set); // => true
+isClass(Map); // => true
+
+// Regular functions
+isClass(() => {}); // => false
+isClass(function() {}); // => false
+isClass(function parse() {}); // => false
+isClass(function Person() {}); // => true
+
+// Other values
+isClass('string'); // => false
+isClass(123); // => false
+isClass({}); // => false
+isClass([]); // => false
+```
+
 ## Types & Enums
 
 ### Kind

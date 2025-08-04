@@ -1,4 +1,5 @@
 import { EventEmitter } from '../runtime/event-emitter';
+import { describe, it, expect, vi } from 'vitest';
 
 describe('event-emitter', () => {
   it('should emit events', () => {

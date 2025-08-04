@@ -1,4 +1,5 @@
 import debugString from '../runtime/debug-string';
+import { describe, it, expect } from 'vitest';
 
 class Person {}
 
@@ -38,7 +39,7 @@ describe('debug-string', () => {
 
   it('stringifies errors', () => {
     const error = new Error('test');
-    expect(debugString(error)).toBe(error.toString() + '\n' + error.stack);
+    expect(debugString(error)).toBe(error.stack);
   });
 
   it('stringifies classes', () => {

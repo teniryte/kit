@@ -1,4 +1,5 @@
 import flatten from '../runtime/flatten';
+import { describe, it, expect } from 'vitest';
 
 describe('flatten', () => {
   it('flattens an array', () => {

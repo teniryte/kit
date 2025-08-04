@@ -1,3 +1,4 @@
+import { isClass } from './is-class';
 import Kind from '../types/kind.enum';
 
 export function kindOf(value: unknown): Kind {
@@ -26,37 +27,7 @@ export function kindOf(value: unknown): Kind {
   if (value instanceof Uint8ClampedArray) return Kind.Uint8ClampedArray;
 
   if (typeof value === 'function') {
-    // Check for built-in classes first
-    if (
-      value === Date ||
-      value === Map ||
-      value === Set ||
-      value === Array ||
-      value === RegExp ||
-      value === Error ||
-      value === Promise ||
-      value === WeakMap ||
-      value === WeakSet ||
-      value === Int8Array ||
-      value === Uint8Array ||
-      value === Uint8ClampedArray ||
-      value === Int16Array ||
-      value === Uint16Array ||
-      value === Int32Array ||
-      value === Uint32Array ||
-      value === Float32Array ||
-      value === Float64Array ||
-      value === BigInt64Array ||
-      value === BigUint64Array ||
-      value === DataView ||
-      value === ArrayBuffer
-    ) {
-      return Kind.Class;
-    }
-
-    // differentiate class from regular function
-    const src = Function.prototype.toString.call(value);
-    return /^class\s/.test(src) ? Kind.Class : Kind.Function;
+    return isClass(value) ? Kind.Class : Kind.Function;
   }
 
   if (Array.isArray(value)) return Kind.Array;
