@@ -11,6 +11,7 @@ export default defineConfig({
     'args-names': 'src/runtime/args-names.ts',
     'event-emitter': 'src/runtime/event-emitter.ts',
     'debug-string': 'src/runtime/debug-string.ts',
+    'is-class': 'src/runtime/is-class.ts',
   },
   format: ['cjs', 'esm'],
   dts: true,
