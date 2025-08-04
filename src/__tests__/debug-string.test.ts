@@ -14,10 +14,10 @@ describe('debug-string', () => {
   });
 
   it('stringifies functions', () => {
-    expect(debugString(() => {})).toBe('<function ()>');
-    expect(debugString((a: number) => a)).toBe('<function (a)>');
+    expect(debugString(() => {})).toBe('[function ()]');
+    expect(debugString((a: number) => a)).toBe('[function (a)]');
     expect(debugString((a: number, b: number) => a + b)).toBe(
-      '<function (a, b)>'
+      '[function (a, b)]'
     );
   });
 

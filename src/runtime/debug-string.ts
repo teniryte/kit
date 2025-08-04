@@ -18,7 +18,7 @@ export const debugString = (val: any): string => {
   if (kindOf(val) === Kind.Class) return `[class ${val.name}]`;
 
   if (kindOf(val) === Kind.Function)
-    return `<function ${val.name}(${argsNames(val).join(', ')})>`;
+    return `[function ${val.name}(${argsNames(val).join(', ')})]`;
 
   if (kindOf(val) === Kind.NaN) return 'NaN';
 
