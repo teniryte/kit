@@ -42,6 +42,10 @@ export const debugString = (val: any): string => {
     return `<${attrs}>${html}</${val.tagName.toLowerCase()}>`;
   }
 
+  if (typeof HTMLCollection === 'function' && val instanceof HTMLCollection) {
+    return debugString([...val]);
+  }
+
   try {
     const s = JSON.stringify(val, null, 2);
     if (s === '{}') {
