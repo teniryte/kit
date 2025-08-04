@@ -44,5 +44,7 @@ describe('kind-of', () => {
     (function () {
       expect(kindOf(arguments)).toBe(Kind.ArrayLike);
     })();
+
+    expect(kindOf({})).toBe(Kind.Object);
   });
 });

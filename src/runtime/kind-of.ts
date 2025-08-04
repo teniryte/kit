@@ -82,6 +82,11 @@ export function kindOf(value: unknown): Kind {
   if (value instanceof Date) return Kind.Date;
   if (value instanceof RegExp) return Kind.RegExp;
 
+  if (typeof Element === 'function' && value instanceof Element)
+    return Kind.Element;
+
+  if (typeof value === 'object') return Kind.Object;
+
   return (typeof value as Kind) || Kind.Undefined;
 }
 

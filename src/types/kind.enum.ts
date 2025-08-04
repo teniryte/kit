@@ -23,6 +23,8 @@ export enum Kind {
   Int8Array = 'int8array',
   Uint8Array = 'uint8array',
   Uint8ClampedArray = 'uint8clampedarray',
+  Object = 'object',
+  Element = 'element',
 }
 
 export default Kind;

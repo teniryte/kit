@@ -1,6 +1,6 @@
 {
   "name": "kit",
-  "version": "2.0.12",
+  "version": "2.0.13",
   "description": "A lightweight TypeScript utility library with Russian pluralization, object/array flattening, and utility types",
   "author": {
     "name": "teniryte",
@@ -58,6 +58,11 @@
       "types": "./dist/esm/runtime/event-emitter.d.ts",
       "import": "./dist/esm/runtime/event-emitter.js",
       "require": "./dist/cjs/runtime/event-emitter.js"
+    },
+    "./debug-string": {
+      "types": "./dist/esm/runtime/debug-string.d.ts",
+      "import": "./dist/esm/runtime/debug-string.js",
+      "require": "./dist/cjs/runtime/debug-string.js"
     }
   },
   "files": [
@@ -98,6 +103,9 @@
       ],
       "event-emitter": [
         "dist/esm/runtime/event-emitter.d.ts"
+      ],
+      "debug-string": [
+        "dist/esm/runtime/debug-string.d.ts"
       ]
     }
   }

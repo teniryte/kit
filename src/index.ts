@@ -11,3 +11,5 @@ export * from './runtime/kind-of';
 export * from './runtime/args-names';
 
 export * from './runtime/event-emitter';
+
+export * from './runtime/debug-string';

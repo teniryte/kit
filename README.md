@@ -108,6 +108,38 @@ const flatObject = flatten({
 }); // => { a: 1, 'b.c.d': 2, 'b.d.0': 3, 'b.d.1': 4}
 ```
 
+### debugString
+
+> Converts any value into a readable string representation for debugging purposes.
+
+```ts
+import { debugString } from 'kit';
+
+// Primitives
+debugString(123); // => '123'
+debugString('hello'); // => 'hello'
+debugString(null); // => 'null'
+debugString(undefined); // => 'undefined'
+debugString(true); // => 'true'
+debugString(NaN); // => 'NaN'
+
+// Functions
+debugString(() => {}); // => '<function ()>'
+debugString((a: number) => a); // => '<function (a)>'
+
+// Arrays
+debugString([1, 2, 3]); // => '[1, 2, 3]'
+
+// Objects
+debugString({ a: 1, b: 2 }); // => '{\n  "a": 1,\n  "b": 2\n}'
+
+// Classes
+debugString(Date); // => '[class Date]'
+
+// Symbols
+debugString(Symbol('test')); // => 'Symbol(test)'
+```
+
 ### argsNames
 
 > Extracts parameter names from a function as an array of strings.
