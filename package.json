@@ -1,6 +1,6 @@
 {
   "name": "kit",
-  "version": "2.0.27",
+  "version": "2.0.29",
   "author": {
     "name": "teniryte",
     "email": "teniryte@gmail.com"
@@ -70,9 +70,9 @@
       "require": "./dist/is-class.cjs"
     },
     "./call-all": {
-      "types": "./dist/esm/runtime/call-all.d.ts",
-      "import": "./dist/esm/runtime/call-all.js",
-      "require": "./dist/cjs/runtime/call-all.js"
+      "types": "./dist/call-all.d.ts",
+      "import": "./dist/call-all.js",
+      "require": "./dist/call-all.cjs"
     }
   },
   "description": "A lightweight TypeScript utility library with Russian pluralization, object/array flattening, and utility types",
