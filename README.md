@@ -25,6 +25,30 @@ import flatten from 'kit/flatten';
 
 ## Utilities
 
+### callAll
+
+> Utility that calls all provided functions with the same arguments, useful for combining multiple event handlers or callbacks.
+
+```ts
+import { callAll } from 'kit';
+
+// Combine multiple event handlers
+const handleClick = (event: MouseEvent) => console.log('Click!');
+const handleAnalytics = (event: MouseEvent) => analytics.track('click', event);
+const handleLogging = (event: MouseEvent) => logger.log('User clicked', event);
+
+// Call all handlers with one call
+const combinedHandler = callAll(handleClick, handleAnalytics, handleLogging);
+button.addEventListener('click', combinedHandler);
+
+// Or call them directly
+callAll(handleClick, handleAnalytics, handleLogging)(event);
+
+// Works with any number of functions
+const singleHandler = callAll(handleClick); // Returns handleClick as-is
+const noHandlers = callAll(); // Returns a no-op function
+```
+
 ### kindOf
 
 > Returns the specific type/kind of a value with enhanced type detection beyond `typeof`.

@@ -68,6 +68,11 @@
       "types": "./dist/is-class.d.ts",
       "import": "./dist/is-class.js",
       "require": "./dist/is-class.cjs"
+    },
+    "./call-all": {
+      "types": "./dist/esm/runtime/call-all.d.ts",
+      "import": "./dist/esm/runtime/call-all.js",
+      "require": "./dist/cjs/runtime/call-all.js"
     }
   },
   "description": "A lightweight TypeScript utility library with Russian pluralization, object/array flattening, and utility types",
@@ -115,6 +120,9 @@
       ],
       "is-class": [
         "dist/is-class.d.ts"
+      ],
+      "call-all": [
+        "dist/call-all.d.ts"
       ]
     }
   }

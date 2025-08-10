@@ -7,3 +7,5 @@ export * from './runtime/args-names';
 export * from './runtime/event-emitter';
 export * from './runtime/debug-string';
 export * from './runtime/is-class';
+
+export * from './runtime/call-all';
